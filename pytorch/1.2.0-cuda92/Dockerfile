@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     libx11-6 \
  && rm -rf /var/lib/apt/lists/*
 
-# Create a non-root user and switch to it
+RUN mkdir /app
+WORKDIR /app
 RUN mkdir /home/user
 
 # All users can use /home/user as their home directory
