@@ -36,7 +36,7 @@ RUN cd ~/pytorch && git reset --hard f176950a67adc44421a52f2fb8354e5a3cf26728 &&
     git submodule update --init --recursive
 
 ENV CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
-RUN python setup.py install
+RUN cd ~/pytorch && python setup.py install
 
 RUN cd ~ && rm -r ~/pytorch
 
