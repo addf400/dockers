@@ -30,7 +30,7 @@ RUN conda install -y conda-build
 RUN conda install -y numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing
 RUN conda install -y -c pytorch magma-cuda92
 
-RUN git clone git clone https://github.com/pytorch/pytorch ~/pytorch
+RUN git clone https://github.com/pytorch/pytorch ~/pytorch
 RUN cd ~/pytorch && git reset --hard f176950a67adc44421a52f2fb8354e5a3cf26728 && \
     git submodule sync && \
     git submodule update --init --recursive
