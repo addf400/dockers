@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:pytorch/pytorch:1.2-cuda10.0-cudnn7-devel
+FROM pytorch/pytorch:1.2-cuda10.0-cudnn7-devel
 
 # Install some basic utilities
 RUN apt-get update && apt-get install -y \
