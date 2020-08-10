@@ -19,4 +19,5 @@ RUN cd /tmp/apex && git reset --hard 1603407bf49c7fc3da74fceb6a6c7b47fece2ef8 &&
     python setup.py install --cuda_ext --cpp_ext
 RUN cd ~ && rm -r /tmp/apex
 
-RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow py-lz4framed regex
+RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow py-lz4framed regex requests transformers boto3 botocore docutils jmespath s3transfer
+
