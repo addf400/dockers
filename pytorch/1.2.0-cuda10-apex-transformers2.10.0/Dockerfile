@@ -12,6 +12,10 @@ RUN apt-get update && apt-get install -y \
     wget \
     ssh \
     tmux \
+    cmake \
+    build-essential \
+    pkg-config \
+    libgoogle-perftools-dev \
  && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/NVIDIA/apex /tmp/apex
