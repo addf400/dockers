@@ -18,4 +18,4 @@ RUN git clone https://github.com/NVIDIA/apex /tmp/apex
 RUN cd /tmp/apex && git reset --hard de6378f5dae8fcf2879a4be8ecea8bbcb9e59d5 && python setup.py install --cuda_ext --cpp_ext
 RUN cd ~ && rm -r /tmp/apex
 
-RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow py-lz4framed boto3 requests sentencepiece sacremoses regex transformers==2.10.0
+RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow sacremoses transformers==2.10.0
