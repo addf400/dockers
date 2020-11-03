@@ -27,3 +27,5 @@ RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge
 RUN cd /tmp && wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb && apt-get update && apt-get install -y blobfuse fuse && rm packages-microsoft-prod.deb
 
 RUN apt-get -y remove cmake build-essential pkg-config libgoogle-perftools-dev
+
+RUN rm -rf /var/lib/apt/lists/*
