@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libx11-6 \
     wget \
     ssh \
+    libopenmpi-dev \
  && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/NVIDIA/apex /tmp/apex
