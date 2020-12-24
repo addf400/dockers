@@ -19,4 +19,4 @@ RUN cd ~ && rm -r /tmp/apex
 
 RUN pip install boto3==1.15.0 sentencepiece==0.1.91
 RUN pip install transformers==2.10.0
-RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow py-lz4framed regex requests botocore docutils jmespath s3transfer
+RUN pip install tensorboardX six numpy tqdm path.py pandas scikit-learn py-rouge scipy lmdb pyarrow py-lz4framed regex requests botocore docutils jmespath s3transfer mpi4py
