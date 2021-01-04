@@ -7,8 +7,7 @@ RUN apt-get update && apt-get install -y \
     protobuf-compiler
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0.tar.gz -O /tmp/cmake-3.14.0.tar.gz
-RUN cd /tmp && tar -zxvf cmake-3.14.0.tar.gz && cd cmake-3.14.0
-RUN ./bootstrap && make && make install
+RUN cd /tmp && tar -zxvf cmake-3.14.0.tar.gz && cd cmake-3.14.0 && ./bootstrap && make && make install
 RUN apt-get install -y clang
 
 RUN rm -rf /var/lib/apt/lists/*
