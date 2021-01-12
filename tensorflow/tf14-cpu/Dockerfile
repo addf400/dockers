@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     gcc g++ git build-essential virtualenv python3 python3-dev openssl libssl-dev libtool autoconf autogen
 
 RUN git clone https://github.com/addf400/cmake-3.14.0.git /tmp/cmake
-RUN cd /tmp/cmake && ./bootstrap --with--ssl && make && make install
+RUN cd /tmp/cmake && chmod 777 bootstrap && ./bootstrap --no-system-curl && make && make install
 RUN apt-get install -y clang
 
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100
