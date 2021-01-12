@@ -14,7 +14,8 @@ RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
 RUN apt-get install -y unzip
 RUN mkdir /workspace && cd /workspace && wget https://github.com/bazelbuild/bazel/releases/download/0.25.2/bazel-0.25.2-installer-linux-x86_64.sh && chmod 777 bazel-0.25.2-installer-linux-x86_64.sh && ./bazel-0.25.2-installer-linux-x86_64.sh
 
-RUN cd /workspace && git clone https://github.com/IntelAI/he-transformer.git && cd he-transformer && export HE_TRANSFORMER=$(pwd) && mkdir build
+RUN cd /workspace && git clone https://github.com/IntelAI/he-transformer.git && cd he-transformer && mkdir build
+ENV HE_TRANSFORMER=/workspace/he-transformer
 RUN cd $HE_TRANSFORMER/build && cmake .. -DCMAKE_CXX_COMPILER=clang++-6.0 && make install
 
 RUN rm -rf /var/lib/apt/lists/*
