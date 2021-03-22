@@ -10,10 +10,10 @@ RUN git clone https://github.com/NVIDIA/apex.git && cd apex && git reset --hard 
 
 # pip install botocore==1.18.18 --user
 # echo "install botocore 1.18.18 done!"
-pip install boto3==1.14.11 --user
-echo "**** install boto3==1.14.11 done!"
-pip install sentencepiece==0.1.91 --user
-echo "**** sentencepiece==0.1.91 done!"
+RUN pip install boto3==1.14.11 --user
+RUN echo "**** install boto3==1.14.11 done!"
+RUN pip install sentencepiece==0.1.91 --user
+RUN echo "**** sentencepiece==0.1.91 done!"
 
 RUN pip install transformers==2.3.0 tensorboardX==1.8 scikit-learn==0.20.3
 
