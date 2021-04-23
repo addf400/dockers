@@ -27,3 +27,5 @@ RUN cd /tmp && \
     apt-get update && \
     apt-get install -y blobfuse fuse && \
     rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && libopenmpi-dev && rm -rf /var/lib/apt/lists/*
