@@ -25,3 +25,5 @@ RUN cd /tmp && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y libopenmpi-dev && rm -rf /var/lib/apt/lists/*
+
+RUN pip install pip==9.0.0 && pip install ruamel.yaml==0.16 --disable-pip-version-check && pip install --upgrade pip
