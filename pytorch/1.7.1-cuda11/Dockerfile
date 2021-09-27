@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
     wget \
     ssh \
     tmux \
+    g++ \
+    llvm-10-dev \
+    cmake \
  && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/NVIDIA/apex /tmp/apex
