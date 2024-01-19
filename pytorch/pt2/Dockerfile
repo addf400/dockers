@@ -15,3 +15,6 @@ RUN cd /tmp && \
     apt-get install -y fuse3 blobfuse2 tmux && \
     rm packages-microsoft-prod.deb && \
     rm -rf /var/lib/apt/lists/*
+
+# /etc/init.d/ssh restart
+# expand ref: https://stackoverflow.com/questions/41544989/docker-container-cant-use-service-sshd-restart
