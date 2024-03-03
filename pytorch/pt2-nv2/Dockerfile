@@ -23,7 +23,7 @@ RUN cd /tmp && \
 RUN pip install json_lines
 RUN pip install transformers==4.34.0
 RUN pip install tokenizers==0.14.0
-RUN pip install timm==0.14.0
+RUN pip install timm==0.4.12
 RUN pip install fairscale==0.14.0
 RUN pip install git+https://github.com/buaahsh/fairseq.git@moe
 RUN pip install git+https://github.com/shumingma/infinibatch.git
