@@ -19,3 +19,10 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+# clone this repo and cd to the folder where this Dockerfile is located
+# RUN: ~/dockers/pytorch/pt23-nv-pro$ docker build .
+#  => => writing image sha256:2963ba99bfd1dd9580fe24fd8b18635ccb26697d463cf5a3b8dcfd5bcaaa3dfe 0.0s
+# use command 'docker images' to check the image by IMAGE ID
+# tag the image with a name: docker tag 2963ba99bfd1 hangbo/pytorch-2.23dev:xformers-ssh
+# login to docker hub and push: docker push hangbo/pytorch-2.23dev:xformers-ssh
