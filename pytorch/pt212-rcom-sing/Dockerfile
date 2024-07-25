@@ -7,3 +7,4 @@ RUN cd /tmp && \
 
 RUN mkdir -p /home/aiscuser
 RUN chmod 777 /home/aiscuser
+RUN chown 777 /home/aiscuser
