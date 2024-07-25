@@ -5,5 +5,5 @@ RUN cd /tmp && \
     apt-get install -y sudo && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /home/aiscuser
+RUN mkdir -p /home/aiscuser
 RUN chmod 777 /home/aiscuser
