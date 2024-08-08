@@ -6,7 +6,7 @@ RUN cd /tmp && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/NVIDIA/apex /tmp/apex
-RUN cd /tmp/apex && pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+RUN cd /tmp/apex && MAX_JOBS=16 pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
 RUN cd ~ && rm -r /tmp/apex
 
 RUN mkdir -p /home/aiscuser
