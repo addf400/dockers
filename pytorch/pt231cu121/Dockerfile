@@ -8,3 +8,7 @@ RUN cd /tmp && \
 RUN git clone https://github.com/NVIDIA/apex /tmp/apex
 RUN cd /tmp/apex && pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
 RUN cd ~ && rm -r /tmp/apex
+
+RUN mkdir -p /home/aiscuser
+RUN chmod 777 /home/aiscuser
+RUN chown 777 /home/aiscuser
