@@ -2,7 +2,8 @@ FROM ubuntu:22.04
 
 RUN cd /tmp && \
     apt-get update && \
-    apt-get install -y fuse tmux git wget python3-pip sudo && \
+    apt-get install -y python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install img2dataset
+RUN rm -r /root/.cache/pip
