@@ -1,0 +1,9 @@
+FROM ubuntu:22.04
+
+RUN cd /tmp && \
+    apt-get update && \
+    apt-get install -y fuse tmux git wget python3-pip sudo && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip install img2dataset
+RUN ln -s /usr/bin/python3.10 /usr/bin/python
