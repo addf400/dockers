@@ -11,3 +11,6 @@ RUN cd /tmp && \
     apt-get install -y blobfuse2 && \
     rm packages-microsoft-prod.deb && \
     rm -rf /var/lib/apt/lists/*
+
+RUN wget -P /user/bin https://github.com/addf400/files/releases/download/util/azcopy
+RUN chmod +x /user/bin/azcopy
