@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y \
     cmake \
  && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/NVIDIA/apex /tmp/apex
-RUN pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+RUN git clone https://github.com/NVIDIA/apex /tmp/apex && \
+    pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
 RUN cd ~ && rm -r /tmp/apex
 
 RUN pip install torchao
