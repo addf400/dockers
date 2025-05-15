@@ -22,3 +22,5 @@ RUN cd ~ && rm -r /tmp/apex
 
 RUN pip install torchao
 RUN MAX_JOBS=4 pip install flash-attn --no-build-isolation
+
+RUN EXPORT PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
