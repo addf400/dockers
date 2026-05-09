@@ -10,7 +10,8 @@ RUN set -eux; \
 	rm -rf /usr/local/cuda-13.0/NsightSystems-cli-2025.5.1/; \
 	rm -rf /opt/pytorch; \
 	python -m pip install --no-cache-dir --upgrade pip setuptools wheel; \
-	pip install --no-cache-dir --force-reinstall setuptools Werkzeug aiohttp filelock filelock fonttools jaraco.context urllib3 urllib3 wheel protobuf pillow nbconvert; \
+	pip install --no-cache-dir --force-reinstall requests black setuptools Werkzeug aiohttp filelock filelock fonttools jaraco.context urllib3 urllib3 wheel protobuf pillow nbconvert; \
+	pip uninstall -y aiohttp onnx; \
 	apt-get -y upgrade; \
 	apt-get -y autoremove --purge; \
 	apt-get clean; \
