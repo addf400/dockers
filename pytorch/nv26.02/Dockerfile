@@ -11,7 +11,7 @@ RUN set -eux; \
 	rm -rf /opt/pytorch; \
 	python -m pip install --no-cache-dir --upgrade pip setuptools; \
 	python -m pip install --no-cache-dir --ignore-installed wheel; \
-	pip install --no-cache-dir --force-reinstall --ignore-installed requests black setuptools Werkzeug aiohttp filelock filelock fonttools jaraco.context urllib3 urllib3 wheel protobuf pillow nbconvert pygments tornado; \
+	pip install --no-cache-dir --force-reinstall --ignore-installed requests black setuptools Werkzeug aiohttp filelock filelock fonttools jaraco.context urllib3 urllib3 wheel protobuf pillow nbconvert pygments tornado aiohttp uv pillow pytest nbconvert; \
 	pip uninstall -y aiohttp onnx; \
 	apt-get -y upgrade; \
 	apt-get -y autoremove --purge; \
