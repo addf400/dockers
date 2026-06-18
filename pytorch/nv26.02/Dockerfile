@@ -11,8 +11,11 @@ RUN set -eux; \
 	rm -rf /opt/pytorch; \
 	python -m pip install --no-cache-dir --upgrade pip setuptools; \
 	python -m pip install --no-cache-dir --ignore-installed wheel; \
-	pip install --no-cache-dir --force-reinstall --ignore-installed requests black setuptools Werkzeug aiohttp mistune jupyterlab notebook filelock fonttools jaraco.context urllib3 wheel protobuf nbconvert pygments tornado aiohttp uv pillow pytest nbconvert; \
-	pip uninstall -y aiohttp onnx; \
+	python -m pip install --no-cache-dir --force-reinstall --ignore-installed requests black setuptools Werkzeug aiohttp mistune jupyterlab notebook filelock fonttools jaraco.context urllib3 wheel protobuf nbconvert pygments tornado aiohttp uv pillow pytest nbconvert; \
+	python -m pip uninstall -y aiohttp onnx; \
+	site_pkgs="$(python -c "import sysconfig; print(sysconfig.get_paths()['purelib'])")"; \
+	pytest_ver="$(python -m pip show pytest | awk '/^Version: /{print $2}')"; \
+	find "$site_pkgs" -maxdepth 1 -type d -name 'pytest-*.dist-info' ! -name "pytest-${pytest_ver}.dist-info" -exec rm -rf {} +; \
 	apt-get remove --purge -y python3-pip python3-setuptools python3-wheel; \
 	rm -rf /usr/lib/python3/dist-packages/pip*; \
 	rm -rf /usr/lib/python3/dist-packages/setuptools*; \
